@@ -1,0 +1,10 @@
+server:
+  port: 8443
+
+spring:
+  main:
+    allow-bean-definition-overriding: true
+
+logging:
+  level:
+    org.springframework.security: INFO

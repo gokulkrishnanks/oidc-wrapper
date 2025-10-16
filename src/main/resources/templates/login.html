@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login - Auth Server POC</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 2rem; }
+    .container { max-width: 400px; margin: 0 auto; }
+    .field { margin-bottom: 1rem; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Sign in</h2>
+    <form method="post" th:action="@{/login}">
+      <div class="field">
+        <label>Username<br/>
+          <input type="text" name="username" />
+        </label>
+      </div>
+      <div class="field">
+        <label>Password<br/>
+          <input type="password" name="password" />
+        </label>
+      </div>
+      <div class="field">
+        <button type="submit">Sign in</button>
+      </div>
+    </form>
+
+    <div th:if="${error}">
+      <p style="color: red;">Invalid credentials.</p>
+    </div>
+    <div th:if="${logout}">
+      <p style="color: green;">You have been logged out.</p>
+    </div>
+  </div>
+</body>
+</html>
